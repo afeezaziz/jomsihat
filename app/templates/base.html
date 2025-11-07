@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="{{ current_language }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ t('site_name') }}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .bebas { font-family: 'Bebas Neue', cursive; }
+        .malaysia-gradient {
+            background: linear-gradient(135deg, #014E82 0%, #FFCC00 50%, #DC143C 100%);
+        }
+        .fitness-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .energy-gradient {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .nature-gradient {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-white to-red-50 min-h-screen">
+    <header class="bg-white/90 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b-4 border-gradient-to-r from-blue-800 via-yellow-400 to-red-600">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-red-600 rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">JS</span>
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-black bebas bg-gradient-to-r from-blue-600 to-red-600 bg-clip-text text-transparent">{{ t('site_name') }}</h1>
+                        <p class="text-xs text-gray-600 font-semibold">FITNESS • HEALTH • MALAYSIA</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <a href="{{ url_for('index') }}" class="text-gray-700 hover:bg-gradient-to-r hover:from-blue-500 hover:to-red-500 hover:text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300">{{ t('home') }}</a>
+                    <a href="{{ url_for('about') }}" class="text-gray-700 hover:bg-gradient-to-r hover:from-blue-500 hover:to-red-500 hover:text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300">{{ t('about') }}</a>
+                    <a href="{{ url_for('services') }}" class="text-gray-700 hover:bg-gradient-to-r hover:from-blue-500 hover:to-red-500 hover:text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300">{{ t('services') }}</a>
+                    <a href="{{ url_for('nutrition') }}" class="text-green-600 hover:bg-green-500 hover:text-white px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 border-2 border-green-500">{{ t('nutrition') }}</a>
+                    <a href="{{ url_for('workout') }}" class="text-orange-600 hover:bg-orange-500 hover:text-white px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 border-2 border-orange-500">{{ t('workout') }}</a>
+                    <a href="{{ url_for('contact') }}" class="text-gray-700 hover:bg-gradient-to-r hover:from-blue-500 hover:to-red-500 hover:text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300">{{ t('contact') }}</a>
+
+                    <!-- Language Selector -->
+                    <div class="relative group">
+                        <button class="bg-gradient-to-r from-blue-500 to-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center space-x-1 hover:from-blue-600 hover:to-red-600 transition-all duration-300">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                            </svg>
+                            <span>{{ t('language') }}</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border-2 border-yellow-400">
+                            <a href="{{ url_for('set_language', language='en') }}" class="block px-4 py-2 text-sm font-semibold {% if current_language == 'en' %}bg-gradient-to-r from-blue-500 to-red-500 text-white{% else %}text-gray-700 hover:bg-blue-50{% endif %} rounded-t-lg">🇬🇧 English</a>
+                            <a href="{{ url_for('set_language', language='ms') }}" class="block px-4 py-2 text-sm font-semibold {% if current_language == 'ms' %}bg-gradient-to-r from-blue-500 to-red-500 text-white{% else %}text-gray-700 hover:bg-red-50{% endif %} rounded-b-lg">🇲🇾 Bahasa Melayu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="malaysia-gradient text-white mt-16 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-600 via-yellow-400 to-red-600"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white/20 backdrop-blur rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white font-black text-2xl bebas">JS</span>
+                    </div>
+                    <h3 class="text-xl font-black bebas mb-2">{{ t('site_name') }}</h3>
+                    <p class="text-sm opacity-90">MALAYSIA'S PREMIER FITNESS & HEALTH PLATFORM</p>
+                </div>
+                <div class="text-center">
+                    <h4 class="text-lg font-bold mb-3">🇲🇾 MALAYSIA</h4>
+                    <p class="text-sm opacity-90 mb-2">Kuala Lumpur • Penang • Johor</p>
+                    <p class="text-sm opacity-90">Sabah • Sarawak • Melaka</p>
+                </div>
+                <div class="text-center">
+                    <h4 class="text-lg font-bold mb-3">💪 FITNESS GOALS</h4>
+                    <p class="text-sm opacity-90 mb-1">Strength • Nutrition • Wellness</p>
+                    <p class="text-sm opacity-90">Community • Excellence</p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white/30">
+                <div class="text-center">
+                    <p class="text-sm font-semibold">&copy; 2024 {{ t('site_name') }}. All rights reserved.</p>
+                    <p class="text-xs opacity-75 mt-2">Made with ❤️ in Malaysia</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block title %}{{ t('home') }} - {{ t('site_name') }}{% endblock %}
+
+{% block content %}
+<!-- Hero Section with Malaysian Theme -->
+<div class="relative overflow-hidden">
+    <div class="malaysia-gradient text-white">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
+            <div class="text-center">
+                <div class="mb-6">
+                    <span class="bg-yellow-400 text-blue-900 px-4 py-2 rounded-full text-sm font-black bebas">🇲🇾 MALAYSIA'S #1 FITNESS PLATFORM</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black bebas mb-6 leading-tight">
+                    {{ t('welcome_to_jom_sihat') }}
+                </h1>
+                <p class="text-xl md:text-3xl mb-8 font-light max-w-3xl mx-auto">
+                    {{ t('your_journey_to_better_health_starts_here') }}
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                    <a href="{{ url_for('nutrition') }}" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover-scale flex items-center justify-center space-x-2">
+                        <span>🥗</span>
+                        <span>{{ t('nutrition') }}</span>
+                    </a>
+                    <a href="{{ url_for('workout') }}" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover-scale flex items-center justify-center space-x-2">
+                        <span>💪</span>
+                        <span>{{ t('workout') }}</span>
+                    </a>
+                </div>
+                <div class="flex justify-center space-x-8 text-sm">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-2xl">🏃‍♂️</span>
+                        <span>10K+ Active Users</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-2xl">🏋️‍♀️</span>
+                        <span>500+ Workouts</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-2xl">🇲🇾</span>
+                        <span>100% Malaysian</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section with Fitness Theme -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="text-center mb-16">
+        <h2 class="text-4xl font-black bebas text-gray-900 mb-4">YOUR FITNESS JOURNEY STARTS HERE</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Transform your body and mind with our comprehensive fitness programs designed for Malaysians</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-2xl p-8 hover-scale">
+            <div class="bg-white/20 backdrop-blur rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">{{ t('expert_care') }}</h3>
+            <p class="text-blue-100 mb-4">{{ t('expert_care_description') }}</p>
+            <div class="flex items-center justify-center space-x-2 text-sm">
+                <span>⭐⭐⭐⭐⭐</span>
+                <span>Expert Trainers</span>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-green-500 to-green-600 text-white rounded-2xl p-8 hover-scale">
+            <div class="bg-white/20 backdrop-blur rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">{{ t('quality_service') }}</h3>
+            <p class="text-green-100 mb-4">{{ t('quality_service_description') }}</p>
+            <div class="flex items-center justify-center space-x-2 text-sm">
+                <span>🏆</span>
+                <span>Award Winning</span>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-2xl p-8 hover-scale">
+            <div class="bg-white/20 backdrop-blur rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">{{ t('24_7_support') }}</h3>
+            <p class="text-purple-100 mb-4">{{ t('24_7_support_description') }}</p>
+            <div class="flex items-center justify-center space-x-2 text-sm">
+                <span>🚑</span>
+                <span>Always Available</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action Section -->
+<div class="energy-gradient text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <div class="mb-8">
+                <span class="bg-white/20 backdrop-blur px-6 py-3 rounded-full text-lg font-bold">🔥 LIMITED TIME OFFER 🔥</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-black bebas mb-6">JOIN THE FITNESS REVOLUTION</h2>
+            <p class="text-xl md:text-2xl mb-8 font-light max-w-3xl mx-auto">Get 50% OFF your first month membership! Special for Malaysians who want to transform their lives.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="{{ url_for('contact') }}" class="bg-white text-pink-600 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover-scale">
+                    {{ t('get_started_today') }}
+                </a>
+                <a href="{{ url_for('services') }}" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:bg-white hover:text-pink-600">
+                    View All Programs
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Malaysian Pride Section -->
+<div class="nature-gradient py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h2 class="text-3xl font-black bebas text-white mb-8">🇲🇾 PROUDLY MALAYSIAN 🇲🇾</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-white/20 backdrop-blur rounded-xl p-6 text-white">
+                    <div class="text-3xl mb-2">🌴</div>
+                    <h3 class="font-bold mb-1">Tropical Climate</h3>
+                    <p class="text-sm opacity-90">Programs designed for Malaysian weather</p>
+                </div>
+                <div class="bg-white/20 backdrop-blur rounded-xl p-6 text-white">
+                    <div class="text-3xl mb-2">🍛</div>
+                    <h3 class="font-bold mb-1">Local Nutrition</h3>
+                    <p class="text-sm opacity-90">Based on Malaysian food culture</p>
+                </div>
+                <div class="bg-white/20 backdrop-blur rounded-xl p-6 text-white">
+                    <div class="text-3xl mb-2">🏛️</div>
+                    <h3 class="font-bold mb-1">Heritage Inspired</h3>
+                    <p class="text-sm opacity-90">Traditional exercises modernized</p>
+                </div>
+                <div class="bg-white/20 backdrop-blur rounded-xl p-6 text-white">
+                    <div class="text-3xl mb-2">🤝</div>
+                    <h3 class="font-bold mb-1">Community First</h3>
+                    <p class="text-sm opacity-90">Malaysian spirit of togetherness</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

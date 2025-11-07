@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}{{ t('workout_title') }} - {{ t('site_name') }}{% endblock %}
+
+{% block content %}
+<div class="bg-gradient-to-r from-red-50 to-orange-50 text-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">{{ t('workout_title') }}</h1>
+            <p class="text-xl md:text-2xl mb-8">{{ t('workout_description') }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+            <div class="bg-red-100 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">{{ t('personal_training') }}</h3>
+            <p class="text-gray-600">{{ t('personal_training_description') }}</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+            <div class="bg-orange-100 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">{{ t('group_classes') }}</h3>
+            <p class="text-gray-600">{{ t('group_classes_description') }}</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+            <div class="bg-yellow-100 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">{{ t('strength_training') }}</h3>
+            <p class="text-gray-600">{{ t('strength_training_description') }}</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+            <div class="bg-green-100 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">{{ t('cardio_fitness') }}</h3>
+            <p class="text-gray-600">{{ t('cardio_fitness_description') }}</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+            <div class="bg-purple-100 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">{{ t('flexibility_yoga') }}</h3>
+            <p class="text-gray-600">{{ t('flexibility_yoga_description') }}</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+            <div class="bg-indigo-100 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">{{ t('rehabilitation') }}</h3>
+            <p class="text-gray-600">{{ t('rehabilitation_description') }}</p>
+        </div>
+    </div>
+
+    <div class="mt-16 bg-red-50 rounded-2xl p-8">
+        <div class="text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">{{ t('get_started_today') }}</h2>
+            <p class="text-lg text-gray-600 mb-8">{{ t('contact_description') }}</p>
+            <a href="{{ url_for('contact') }}" class="bg-red-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-700 transition duration-300">
+                {{ t('contact_us') }}
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
