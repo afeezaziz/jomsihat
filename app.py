@@ -1,9 +1,18 @@
 from flask import Flask, render_template, session, request, redirect, url_for
 import os
 import json
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 app = Flask(__name__, template_folder='app/templates', static_folder='app/static')
-app.secret_key = 'your-secret-key-change-in-production'
+
+# Configuration
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your-secret-key-change-in-production')
+app.config['SESSION_COOKIE_SECURE'] = os.environ.get('FLASK_ENV') == 'production'
+app.config['SESSION_COOKIE_HTTPONLY'] = True
+app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 
 # Language and translation functions
 def load_translations():
@@ -58,6 +67,16 @@ def nutrition():
 @app.route('/workout')
 def workout():
     return render_template('workout.html')
+
+# Health check endpoint for Coolify
+@app.route('/health')
+def health_check():
+    return {
+        'status': 'healthy',
+        'service': 'Jom Sihat',
+        'version': '1.0.0',
+        'language': session.get('language', 'en')
+    }
 
 if __name__ == '__main__':
     app.run(debug=True)

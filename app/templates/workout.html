@@ -3,85 +3,267 @@
 {% block title %}{{ t('workout_title') }} - {{ t('site_name') }}{% endblock %}
 
 {% block content %}
-<div class="bg-gradient-to-r from-red-50 to-orange-50 text-gray-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">{{ t('workout_title') }}</h1>
-            <p class="text-xl md:text-2xl mb-8">{{ t('workout_description') }}</p>
+<!-- Hero Section with Energy/Fitness Theme -->
+<div class="relative overflow-hidden">
+    <div class="energy-gradient text-white">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
+            <div class="text-center">
+                <div class="mb-6">
+                    <span class="bg-yellow-400 text-pink-900 px-4 py-2 rounded-full text-sm font-black bebas flex items-center space-x-2 mx-auto w-fit">
+                        <span>🔥</span>
+                        <span>UNLEASH YOUR INNER CHAMPION</span>
+                    </span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black bebas mb-6 leading-tight">
+                    {{ t('workout_title') }}
+                </h1>
+                <p class="text-xl md:text-3xl mb-8 font-light max-w-3xl mx-auto">
+                    {{ t('workout_description') }}
+                </p>
+                <div class="flex justify-center space-x-8 text-sm mb-8">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-2xl">💪</span>
+                        <span>Expert Trainers</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-2xl">🏆</span>
+                        <span>Proven Results</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-2xl">🇲🇾</span>
+                        <span>Made for Malaysia</span>
+                    </div>
+                </div>
+                <div class="bg-white/20 backdrop-blur rounded-2xl p-6 max-w-2xl mx-auto">
+                    <h3 class="text-lg font-bold mb-3">⚡ TODAY'S WORKOUT CHALLENGE</h3>
+                    <p class="text-2xl font-black bebas mb-2">Tropical HIIT Blast</p>
+                    <p class="text-sm opacity-90">30-minute high-intensity workout designed for Malaysian climate</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-            <div class="bg-red-100 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">{{ t('personal_training') }}</h3>
-            <p class="text-gray-600">{{ t('personal_training_description') }}</p>
-        </div>
-
-        <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-            <div class="bg-orange-100 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">{{ t('group_classes') }}</h3>
-            <p class="text-gray-600">{{ t('group_classes_description') }}</p>
-        </div>
-
-        <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-            <div class="bg-yellow-100 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">{{ t('strength_training') }}</h3>
-            <p class="text-gray-600">{{ t('strength_training_description') }}</p>
-        </div>
-
-        <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-            <div class="bg-green-100 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">{{ t('cardio_fitness') }}</h3>
-            <p class="text-gray-600">{{ t('cardio_fitness_description') }}</p>
-        </div>
-
-        <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-            <div class="bg-purple-100 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
-                </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">{{ t('flexibility_yoga') }}</h3>
-            <p class="text-gray-600">{{ t('flexibility_yoga_description') }}</p>
-        </div>
-
-        <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-            <div class="bg-indigo-100 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">{{ t('rehabilitation') }}</h3>
-            <p class="text-gray-600">{{ t('rehabilitation_description') }}</p>
-        </div>
+<!-- Workout Programs Grid -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="text-center mb-16">
+        <h2 class="text-4xl font-black bebas text-gray-900 mb-4">FITNESS PROGRAMS FOR EVERY GOAL</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">From beginners to athletes, we have the perfect workout program for your fitness journey</p>
     </div>
 
-    <div class="mt-16 bg-red-50 rounded-2xl p-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gradient-to-br from-red-500 to-pink-600 text-white rounded-2xl p-8 hover-scale">
+            <div class="bg-white/20 backdrop-blur rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                <span class="text-4xl">🏋️‍♀️</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">{{ t('strength_training') }}</h3>
+            <p class="text-red-100 mb-6">{{ t('strength_training_description') }}</p>
+            <div class="space-y-2 text-sm">
+                <div class="flex items-center space-x-2">
+                    <span>✓</span>
+                    <span>Free weights</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span>✓</span>
+                    <span>Machines</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span>✓</span>
+                    <span>Bodyweight</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-orange-500 to-red-600 text-white rounded-2xl p-8 hover-scale">
+            <div class="bg-white/20 backdrop-blur rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                <span class="text-4xl">👥</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">{{ t('group_classes') }}</h3>
+            <p class="text-orange-100 mb-6">{{ t('group_classes_description') }}</p>
+            <div class="space-y-2 text-sm">
+                <div class="flex items-center space-x-2">
+                    <span>✓</span>
+                    <span>Zumba</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span>✓</span>
+                    <span>Body Combat</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span>✓</span>
+                    <span>Dance Fitness</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-purple-500 to-indigo-600 text-white rounded-2xl p-8 hover-scale">
+            <div class="bg-white/20 backdrop-blur rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                <span class="text-4xl">🏃‍♂️</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">{{ t('cardio_fitness') }}</h3>
+            <p class="text-purple-100 mb-6">{{ t('cardio_fitness_description') }}</p>
+            <div class="space-y-2 text-sm">
+                <div class="flex items-center space-x-2">
+                    <span>✓</span>
+                    <span>Treadmill</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span>✓</span>
+                    <span>Cycling</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span>✓</span>
+                    <span>HIIT</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-500 to-cyan-600 text-white rounded-2xl p-8 hover-scale">
+            <div class="bg-white/20 backdrop-blur rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                <span class="text-4xl">🧘‍♀️</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">{{ t('flexibility_yoga') }}</h3>
+            <p class="text-blue-100 mb-6">{{ t('flexibility_yoga_description') }}</p>
+            <div class="space-y-2 text-sm">
+                <div class="flex items-center space-x-2">
+                    <span>✓</span>
+                    <span>Yoga</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span>✓</span>
+                    <span>Pilates</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span>✓</span>
+                    <span>Stretching</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-green-500 to-emerald-600 text-white rounded-2xl p-8 hover-scale">
+            <div class="bg-white/20 backdrop-blur rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                <span class="text-4xl">👨‍⚕️</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">{{ t('personal_training') }}</h3>
+            <p class="text-green-100 mb-6">{{ t('personal_training_description') }}</p>
+            <div class="space-y-2 text-sm">
+                <div class="flex items-center space-x-2">
+                    <span>✓</span>
+                    <span>1-on-1 coaching</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span>✓</span>
+                    <span>Custom plans</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span>✓</span>
+                    <span>Form correction</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-yellow-500 to-orange-600 text-white rounded-2xl p-8 hover-scale">
+            <div class="bg-white/20 backdrop-blur rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                <span class="text-4xl">🏥</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">{{ t('rehabilitation') }}</h3>
+            <p class="text-yellow-100 mb-6">{{ t('rehabilitation_description') }}</p>
+            <div class="space-y-2 text-sm">
+                <div class="flex items-center space-x-2">
+                    <span>✓</span>
+                    <span>Injury recovery</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span>✓</span>
+                    <span>Physical therapy</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span>✓</span>
+                    <span>Prevention</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Malaysian Fitness Styles Section -->
+<div class="bg-gradient-to-r from-orange-50 to-red-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-black bebas text-gray-900 mb-4">🇲🇾 MALAYSIAN FITNESS STYLES 🇲🇾</h2>
+            <p class="text-lg text-gray-600">Traditional exercises adapted for modern fitness</p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="bg-gradient-to-br from-red-500 to-orange-500 text-white rounded-xl p-6 text-center">
+                <span class="text-3xl mb-3 block">🥋</span>
+                <h4 class="font-bold mb-2">SILAT FITNESS</h4>
+                <p class="text-sm">Traditional martial arts cardio</p>
+            </div>
+            <div class="bg-gradient-to-br from-blue-500 to-purple-500 text-white rounded-xl p-6 text-center">
+                <span class="text-3xl mb-3 block">🏸</span>
+                <h4 class="font-bold mb-2">BADMINTON HIIT</h4>
+                <p class="text-sm">Malaysia's sport as workout</p>
+            </div>
+            <div class="bg-gradient-to-br from-green-500 to-teal-500 text-white rounded-xl p-6 text-center">
+                <span class="text-3xl mb-3 block">🌴</span>
+                <h4 class="font-bold mb-2">TROPICAL YOGA</h4>
+                <p class="text-sm">Yoga adapted for humidity</p>
+            </div>
+            <div class="bg-gradient-to-br from-yellow-500 to-red-500 text-white rounded-xl p-6 text-center">
+                <span class="text-3xl mb-3 block">🥊</span>
+                <h4 class="font-bold mb-2">TOMOI FITNESS</h4>
+                <p class="text-sm">Boxing-inspired workouts</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Stats Section -->
+<div class="fitness-bg text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">{{ t('get_started_today') }}</h2>
-            <p class="text-lg text-gray-600 mb-8">{{ t('contact_description') }}</p>
-            <a href="{{ url_for('contact') }}" class="bg-red-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-700 transition duration-300">
-                {{ t('contact_us') }}
-            </a>
+            <h2 class="text-3xl font-black bebas mb-12">JOIN THE FITNESS MOVEMENT</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-4xl font-black bebas mb-2">50K+</div>
+                    <div class="text-sm opacity-90">Active Members</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-black bebas mb-2">1000+</div>
+                    <div class="text-sm opacity-90">Classes Weekly</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-black bebas mb-2">50+</div>
+                    <div class="text-sm opacity-90">Expert Trainers</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-black bebas mb-2">15</div>
+                    <div class="text-sm opacity-90">Locations Nationwide</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action -->
+<div class="energy-gradient text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <div class="mb-8">
+                <span class="bg-yellow-400 text-pink-900 px-6 py-3 rounded-full text-lg font-black bebas">🔥 TRANSFORM CHALLENGE</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-black bebas mb-6">90-DAY BODY TRANSFORMATION</h2>
+            <p class="text-xl md:text-2xl mb-8 font-light max-w-3xl mx-auto">Join Malaysia's most effective fitness transformation program! Guaranteed results or your money back.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="{{ url_for('contact') }}" class="bg-yellow-400 text-pink-900 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover-scale">
+                    {{ t('get_started_today') }}
+                </a>
+                <a href="{{ url_for('nutrition') }}" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:bg-white hover:text-pink-600">
+                    Add Nutrition Plan →
+                </a>
+            </div>
         </div>
     </div>
 </div>
