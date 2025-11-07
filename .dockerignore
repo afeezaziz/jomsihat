@@ -88,6 +88,12 @@ CHANGELOG.md
 # Documentation
 docs/
 
+# Tests
+tests/
+pytest.ini
+.coverage
+htmlcov/
+
 # Backup files
 *.bak
 *.backup
