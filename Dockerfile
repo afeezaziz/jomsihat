@@ -1,5 +1,5 @@
 # Multi-stage build for optimized CI/CD
-FROM python:3.11-slim as base
+FROM python:3.11-slim AS base
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -21,14 +21,14 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Build stage for assets
-FROM node:18-alpine as assets
+FROM node:18-alpine AS assets
 
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci --only=production
 
 # Production stage
-FROM python:3.11-slim as production
+FROM python:3.11-slim AS production
 
 # Copy Python dependencies from base stage
 COPY --from=base /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages

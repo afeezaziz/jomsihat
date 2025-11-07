@@ -126,9 +126,10 @@ jobs:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
   security-scan:
+    needs: build-and-push
     runs-on: ubuntu-latest
     name: Security Scan
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && needs.build-and-push.result == 'success'
 
     steps:
     - name: Run Trivy vulnerability scanner
@@ -139,7 +140,7 @@ jobs:
         output: 'trivy-results.sarif'
 
     - name: Upload Trivy scan results to GitHub Security tab
-      uses: github/codeql-action/upload-sarif@v2
+      uses: github/codeql-action/upload-sarif@v3
       if: always()
       with:
         sarif_file: 'trivy-results.sarif'
