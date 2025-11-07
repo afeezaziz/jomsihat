@@ -115,7 +115,7 @@ trigger_coolify_deployment() {
     # Prepare payload
     PAYLOAD=$(cat <<EOF
 {
-    "image": "ghcr.io/your-username/jomsihat:latest",
+    "image": "ghcr.io/afeezaziz/jomsihat:latest",
     "branch": "$BRANCH",
     "commit": "$COMMIT",
     "deployed_by": "$(git config user.name)",

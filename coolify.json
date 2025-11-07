@@ -4,7 +4,7 @@
   "type": "docker-compose",
   "version": "1.0.0",
   "repository": {
-    "url": "https://github.com/your-username/jomsihat",
+    "url": "https://github.com/afeezaziz/jomsihat",
     "branch": "main"
   },
   "environments": {
@@ -20,7 +20,7 @@
       },
       "services": {
         "web": {
-          "image": "ghcr.io/your-username/jomsihat:latest",
+          "image": "ghcr.io/afeezaziz/jomsihat:latest",
           "ports": ["5000:5000"],
           "health_check": {
             "path": "/health",
@@ -70,7 +70,7 @@
       },
       "services": {
         "web": {
-          "image": "ghcr.io/your-username/jomsihat:develop",
+          "image": "ghcr.io/afeezaziz/jomsihat:develop",
           "ports": ["5000:5000"],
           "health_check": {
             "path": "/health",
